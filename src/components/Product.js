@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import { formatPrice } from '../utils/helpers'
-import { FaSearch } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import React from "react";
+import styled from "styled-components";
+import { formatPrice } from "../manager/utils/helpers";
+import { FaSearch } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Product = () => {
   return <h4>product</h4>
@@ -64,4 +64,4 @@ const Wrapper = styled.article`
     letter-spacing: var(--spacing);
   }
 `
-export default Product
+export default Product;

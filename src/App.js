@@ -1,6 +1,6 @@
-import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { Navbar, Sidebar, Footer } from './components'
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Navbar, Sidebar, Footer } from "./components";
 import {
   HomePage,
   AboutPage,
@@ -9,7 +9,7 @@ import {
   SingleProductPage,
   CheckoutPage,
   ErrorPage,
-} from "./pages";
+} from "./displays";
 
 function App() {
   return (
@@ -30,4 +30,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

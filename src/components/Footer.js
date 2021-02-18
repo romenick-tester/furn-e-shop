@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 const Footer = () => {
   return <h4>footer</h4>
 }
@@ -28,4 +28,4 @@ const Wrapper = styled.footer`
   }
 `
 
-export default Footer
+export default Footer;

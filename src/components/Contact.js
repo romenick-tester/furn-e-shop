@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 const Contact = () => {
   return <h4>contact section</h4>
@@ -69,4 +69,4 @@ const Wrapper = styled.section`
   }
 `
 
-export default Contact
+export default Contact;

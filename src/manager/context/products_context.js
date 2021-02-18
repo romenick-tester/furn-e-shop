@@ -1,7 +1,7 @@
-import axios from 'axios'
-import React, { useContext, useEffect, useReducer } from 'react'
-import reducer from '../reducers/products_reducer'
-import { products_url as url } from '../utils/constants'
+import axios from "axios";
+import React, { useContext, useEffect, useReducer } from "react";
+import reducer from "../reducers/products_reducer";
+import { products_url as url } from "../utils/variables";
 import {
   SIDEBAR_OPEN,
   SIDEBAR_CLOSE,
@@ -11,7 +11,7 @@ import {
   GET_SINGLE_PRODUCT_BEGIN,
   GET_SINGLE_PRODUCT_SUCCESS,
   GET_SINGLE_PRODUCT_ERROR,
-} from '../actions'
+} from "../constants";
 
 const initialState = {}
 
@@ -19,7 +19,7 @@ const ProductsContext = React.createContext()
 
 export const ProductsProvider = ({ children }) => {
   return (
-    <ProductsContext.Provider value='products context'>
+    <ProductsContext.Provider value="products context">
       {children}
     </ProductsContext.Provider>
   )
