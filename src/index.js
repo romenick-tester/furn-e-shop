@@ -9,4 +9,8 @@ import {
     ProductsProvider, 
     Auth0Provider } from "./manager/context";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+    <ProductsProvider>
+        <App />
+    </ProductsProvider>, 
+    document.getElementById("root"))
