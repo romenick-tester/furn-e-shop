@@ -1,8 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Filters, ProductList, Sort, PageHero } from "../components";
+//import { useProductsContext } from "../manager";
 
 const ProductsPage = () => {
+  //const data = useProductsContext();
 
   return <h4>products page</h4>
 }

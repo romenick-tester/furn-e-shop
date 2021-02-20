@@ -1,29 +1,30 @@
 import React from "react"
 import logo from "../manager/assets/logo.svg"
 import { Link } from "react-router-dom"
-import { useProductsContext } from "../manager/context/products_context"
+import { useProductsContext } from "../manager"
 import { FaTimes } from "react-icons/fa"
 import { links } from "../manager/utils/variables"
 import styled from "styled-components"
 import CartButtons from "./CartButtons"
-import { useUserContext } from "../manager/context/user_context"
+import { useUserContext } from "../manager"
 
 const Sidebar = () => {
-  const isOpen = true;
+  const { isSidebarOpen, closeSidebar } = useProductsContext();
+  
   return (
     <SidebarContainer>
-      <aside className={`sidebar ${isOpen && "show-sidebar"}`}>
+      <aside className={`sidebar ${isSidebarOpen && "show-sidebar"}`}>
         <div className="sidebar-header">
           <img src={logo} alt="furn-e-shop" className="logo" />
-          <button type="button" className="close-btn">
+          <button type="button" className="close-btn" onClick={closeSidebar}>
             <FaTimes/>
           </button>
         </div>
         <ul className="links">
           {links.map(({id, url, text}) => {
-            return <li key={id}><Link to={url}> {text} </Link></li>
+            return <li key={id}><Link to={url} onClick={closeSidebar}> {text} </Link></li>
           })}
-          <li><Link to="/checkout"> checkout </Link></li>
+          <li><Link to="/checkout" onClick={closeSidebar}> checkout </Link></li>
         </ul>
           <CartButtons/>
       </aside>
