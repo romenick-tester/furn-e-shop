@@ -5,7 +5,22 @@ import heroBcg from "../manager/assets/hero-bcg.jpeg";
 import heroBcg2 from "../manager/assets/hero-bcg-2.jpeg";
 
 const Hero = () => {
-  return <h4>hero</h4>
+  return (
+    <Wrapper className="section-center">
+      <article className="content">
+        <h1>
+          design you <br/>
+          comfort zone
+        </h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates accusamus non est rerum voluptatibus cumque dolores debitis recusandae obcaecati aperiam facilis quas magnam quae quasi, iusto blanditiis. Officia asperiores soluta modi nihil cum impedit ex quas in cupiditate. Est assumenda ea sequi repellendus quidem, optio dicta ducimus totam placeat blanditiis?</p>
+        <Link to="/products" className="btn hero-btn">show now</Link>
+      </article>
+      <article className="img-container">
+        <img src={heroBcg} alt="nice table" className="main-img"/>
+        <img src={heroBcg2} alt="on duty" className="accent-img"/>
+      </article>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`
@@ -58,7 +73,7 @@ const Wrapper = styled.section`
       border-radius: var(--radius);
     }
     .img-container::before {
-      content: ";
+      content: '';
       position: absolute;
       width: 10%;
       height: 80%;
