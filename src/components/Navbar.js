@@ -23,7 +23,7 @@ const Nav = () => {
           </button>
         </div>
         <ul className="nav-links">
-          {links.map(({id, url, text}, index) => <li key={id}><Link to={url}> {index+1}.{text} </Link></li>)}
+          {links.map(({id, url, text}) => <li key={id}><Link to={url}> {text} </Link></li>)}
         </ul>
         <CartButtons/>
       </div>
