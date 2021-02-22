@@ -1,7 +1,11 @@
 import React from "react";
 
-const Error = () => {
-  return <h4>error element</h4>
+const Error = ({children}) => {
+  return (
+    <div className="section section-center tex-center">
+      <h2>{children}</h2>
+    </div>
+  )
 }
 
 export default Error;
