@@ -8,15 +8,16 @@ const Contact = () => {
         <h3>join our newsletter and get 20% off</h3>
         <div className="content">
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea vel vitae, officiis nobis nemo doloremque temporibus unde aspernatur provident consequatur!</p>
-          <form className="contact-form">
-            <input type="email" className="form-input" placeholder="enter email" />
-            <button type="submit" className="submit-btn">subscribe now</button>
+          <form  action="" className="contact-form" action="https://formspree.io/f/xqkgoopj" method="POST">
+            <input type="email" name="replyto" className="form-input" placeholder="enter email" />
+            <button type="submit" className="submit-btn">subscribe</button>
           </form>
         </div>
       </div>
     </Wrapper>
   )
 }
+
 const Wrapper = styled.section`
   padding: 5rem 0;
   h3 {
