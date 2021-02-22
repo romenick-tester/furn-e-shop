@@ -1,20 +1,28 @@
 import axios from "axios";
 import React, { useContext, useEffect, useReducer } from "react";
 import { products_reducer as reducer } from "../reducers";
-import { products_url as url } from "../utils/variables";
+import { products_url as url1 } from "../utils/variables";
+//import { single_product_url as url2 } from "../utils/variables";
 import {
   SIDEBAR_OPEN,
   SIDEBAR_CLOSE,
   GET_PRODUCTS_REQUEST,
   GET_PRODUCTS_SUCCESS,
   GET_PRODUCTS_ERROR,
-  //GET_SINGLE_PRODUCT_BEGIN,
+  //GET_SINGLE_PRODUCT_REQUEST,
   //GET_SINGLE_PRODUCT_SUCCESS,
   //GET_SINGLE_PRODUCT_ERROR,
 } from "../constants";
 
 const initialState = {
   isSidebarOpen: true,
+  products_loading: false,
+  //product_loading: false,
+  products_error: false,
+  //product_error: false,
+  products: [],
+  //product: {},
+  products_featured: [],
 }
 
 const ProductsContext = React.createContext()
@@ -23,23 +31,32 @@ export const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const getProducts = async(para1) => {
-    dispatch({ type: GET_PRODUCTS_REQUEST });
     try {
+      dispatch({ type: GET_PRODUCTS_REQUEST });
+
       const { data } = await axios.get(para1);
-      if(data) {
-        dispatch({ type: GET_PRODUCTS_SUCCESS, payload: data });
-      } else {
-        dispatch({ type: GET_PRODUCTS_ERROR, payload: { error: { message: "404: products not found!" } } });
-      }
+      dispatch({ type: GET_PRODUCTS_SUCCESS, payload: data });
+      
     } catch (error) {
-      dispatch({ type: GET_PRODUCTS_ERROR, payload: error && error.message ? error.message : error })
-      console.error(error.message);
+      dispatch({ type: GET_PRODUCTS_ERROR });
+
     }
   }
 
+  // const getSingleProduct = async(para2) => {
+  //   try {
+  //     dispatch({ type: GET_SINGLE_PRODUCT_REQUEST });
+  //     const { data } = await axios.get(para2);
+  //      dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: data });
+  //   } catch (error) {
+  //     dispatch({ type: GET_SINGLE_PRODUCT_ERROR })
+  //   }
+  // }
+
   useEffect(() => {
-    getProducts(url);
-  }, [url])
+    getProducts(url1);
+    //getSingleProduct(url2);
+  }, [url1])
 
   const openSidebar = () => {
     dispatch({ type: SIDEBAR_OPEN });
