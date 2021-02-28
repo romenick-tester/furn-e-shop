@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
 import { useProductsContext } from "../manager/context/products_context";
 import { single_product_url as url } from "../manager/utils/variables";
 import { formatPrice } from "../manager/utils/helpers";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 import {
   Loading,
   Error,
@@ -11,11 +12,74 @@ import {
   Stars,
   PageHero,
 } from "../components";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
 
-const SingleProductPage = () => {
-  return <h4>single product page</h4>
+const SingleProductPage = ({ match, history }) => {
+  const product_id = match.params.id;
+
+  const {
+    single_product_loading: loading,
+    single_product_error: error,
+    single_product: product,
+    getSingleProduct,
+  } = useProductsContext();
+
+  useEffect(() => {
+    getSingleProduct(`${url}${product_id}`)
+  }, [product_id]);
+
+  useEffect(() => {
+    if (error) {
+      setTimeout(() => {
+        history.push("/");
+      }, 3000);
+    }
+  }, [error, history])
+
+  if (loading) {
+    return <Loading />
+  }
+
+  if (error) {
+    return <Error>There was an error.</Error>
+  }
+
+  const {
+    category, colors, company, description, featured, id,
+    images, name, price, reviews, shipping, stars, stock, sku } = product;
+
+  return (
+    <Wrapper>
+      <PageHero title={name} product />
+      <div className="section section-center page">
+        <Link to="/products" className="btn">
+          backt to products
+        </Link>
+        <div className="product-center">
+          <ProductImages />
+          <section className="content">
+            <h2>{name}</h2>
+            <Stars />
+            <h5 className="price">{formatPrice(price)}</h5>
+            <p className="desc">{description}</p>
+            <p className="info">
+              <span>Available :</span>
+              {stock > 0 ? "in-stock" : "out of stock"}
+            </p>
+            <p className="info">
+              <span>SKU :</span>
+              {sku}
+            </p>
+            <p className="info">
+              <span>company :</span>
+              {company}
+            </p>
+            <hr />
+            {stock > 0 && <AddToCart />}
+          </section>
+        </div>
+      </div>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.main`
