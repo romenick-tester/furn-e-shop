@@ -6,7 +6,11 @@ import { Filters, ProductList, Sort, PageHero } from "../components";
 const ProductsPage = () => {
   //const data = useProductsContext();
 
-  return <h4>products page</h4>
+  return (
+    <Wrapper className="page">
+      <h1>hello</h1>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.div`
