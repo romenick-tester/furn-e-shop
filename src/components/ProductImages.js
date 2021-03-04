@@ -27,12 +27,14 @@ const Wrapper = styled.section`
   .main {
     height: 600px;
   }
+  
   img {
     width: 100%;
     display: block;
     border-radius: var(--radius);
     object-fit: cover;
   }
+
   .gallery {
     margin-top: 1rem;
     display: grid;
@@ -43,9 +45,11 @@ const Wrapper = styled.section`
       cursor: pointer;
     }
   }
+
   .active {
     border: 2px solid var(--clr-primary-5);
   }
+
   @media (max-width: 576px) {
     .main {
       height: 300px;
@@ -56,6 +60,7 @@ const Wrapper = styled.section`
       }
     }
   }
+  
   @media (min-width: 992px) {
     .main {
       height: 500px;
