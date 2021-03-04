@@ -2,26 +2,21 @@ import React from "react";
 import styled from "styled-components";
 import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
 
-const Stars = ({ reviews, stars }) => {
+const Stars = ({ reviews, stars: rating }) => {
+
+  const stars = Array.from({ length: 5 }, (x, index) => {
+    const num = index + 0.5;
+    return (
+      <span key={index}>
+        {rating >= (index + 1) ? <BsStarFill /> : rating >= num ? <BsStarHalf /> : <BsStar />}
+      </span>
+    )
+  })
 
   return (
     <Wrapper>
       <div className="stars">
-        <span>
-          {stars >= 1 ? <BsStarFill /> : stars >= 0.5 ? <BsStarHalf /> : <BsStar />}
-        </span>
-        <span>
-          {stars >= 2 ? <BsStarFill /> : stars >= 1.5 ? <BsStarHalf /> : <BsStar />}
-        </span>
-        <span>
-          {stars >= 3 ? <BsStarFill /> : stars >= 2.5 ? <BsStarHalf /> : <BsStar />}
-        </span>
-        <span>
-          {stars >= 4 ? <BsStarFill /> : stars >= 3.5 ? <BsStarHalf /> : <BsStar />}
-        </span>
-        <span>
-          {stars >= 5 ? <BsStarFill /> : stars >= 4.5 ? <BsStarHalf /> : <BsStar />}
-        </span>
+        {stars}
       </div>
       <p className="reviews">
         ({reviews} customer reviews)
