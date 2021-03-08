@@ -49,32 +49,48 @@ const SingleProductPage = ({ match, history }) => {
 
   return (
     <Wrapper>
+
       <PageHero title={name} product />
+
       <div className="section section-center page">
+
         <Link to="/products" className="btn">
           backt to products
         </Link>
+
         <div className="product-center">
+
           <ProductImages images={images} />
+
           <section className="content">
+
             <h2>{name}</h2>
+
             <Stars stars={stars} reviews={reviews} />
+
             <h5 className="price">{formatPrice(price)}</h5>
+
             <p className="desc">{description}</p>
+
             <p className="info">
               <span>Available :</span>
               {stock > 0 ? "in-stock" : "out of stock"}
             </p>
+
             <p className="info">
               <span>SKU :</span>
               {sku}
             </p>
+
             <p className="info">
               <span>company :</span>
               {company}
             </p>
+
             <hr />
-            {stock > 0 && <AddToCart />}
+
+            {stock > 0 && <AddToCart product={product} />}
+
           </section>
         </div>
       </div>
