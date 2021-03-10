@@ -1,17 +1,23 @@
-## Notes
+# Furn-e-Shop
 
-#### Older React Version
+<img src="https://i.ibb.co/Nn9mhZp/furn-e-shop.png" width="200">
 
-```
-"react": "^16.13.1",
-"react-dom": "^16.13.1",
-"react-scripts": "3.4.3",
-```
+<img src="https://i.ibb.co/CKSZ6Sc/furn-e-shop2.png" width="200">
 
-#### Current React Version
+> ecommerse
 
-```
-"react": "^17.0.1",
-"react-dom": "^17.0.1",
-"react-scripts": "4.0.0",
-```
+*Description:*
+---
+
+
+---
+
+| React Dependencies | Languages |
+| --------- | ---------- |
+| redux-devtools-extension |  |
+| redux |  |
+| react-redux | reactjs |
+| redux-thunk | nodejs |
+| react-router-dom | javascript |
+| react-icons | html |
+| styled-components | css |

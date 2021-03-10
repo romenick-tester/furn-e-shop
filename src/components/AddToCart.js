@@ -12,8 +12,8 @@ const AddToCart = ({ product }) => {
   const [amount, setAmount] = useState(1);
 
   const increase = () => {
-    setAmount((preState) => {
-      let amounT = preState + 1;
+    setAmount((state) => {
+      let amounT = state + 1;
       if (amounT > stock) {
         amounT = stock;
       }
@@ -22,8 +22,8 @@ const AddToCart = ({ product }) => {
   };
 
   const decrease = () => {
-    setAmount((preState) => {
-      let amounT = preState - 1;
+    setAmount((state) => {
+      let amounT = state - 1;
       if (amounT < 1) {
         amounT = 1;
       }
