@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
-import { useProductsContext } from "../manager/context/products_context";
-import { single_product_url as url } from "../manager/utils/variables";
-import { formatPrice } from "../manager/utils/helpers";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import {
+  useProductsContext,
+  single_product_url as url,
+  formatPrice,
+} from "../manager"
 import {
   Loading,
   Error,

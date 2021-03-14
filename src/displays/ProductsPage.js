@@ -7,9 +7,18 @@ const ProductsPage = () => {
   //const data = useProductsContext();
 
   return (
-    <Wrapper className="page">
-      <h1>hello</h1>
-    </Wrapper>
+    <main>
+      <PageHero title="products" />
+      <Wrapper className="page">
+        <div className="section-center products">
+          <Filters />
+          <div>
+            <Sort />
+            <ProductList />
+          </div>
+        </div>
+      </Wrapper>
+    </main>
   )
 }
 

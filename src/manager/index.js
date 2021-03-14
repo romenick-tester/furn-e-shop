@@ -1,6 +1,13 @@
-import { useProductsContext, useFilterContext, useUserContext, ProductsProvider, CartProvider, FilterProvider } from "./context";
+import {
+    useProductsContext,
+    useFilterContext,
+    useUserContext,
+    ProductsProvider,
+    CartProvider,
+    FilterProvider
+} from "./context";
 import { products_reducer, filter_reducer, cart_reducer } from "./reducers";
-import { links, services } from "./utils"
+import { links, services, getUniqueValues, formatPrice, single_product_url } from "./utils"
 
 export {
     useProductsContext,
@@ -12,5 +19,6 @@ export {
     products_reducer,
     filter_reducer,
     cart_reducer,
-    services, links
+    getUniqueValues, formatPrice,
+    services, links, single_product_url,
 };

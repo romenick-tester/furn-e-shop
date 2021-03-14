@@ -1,5 +1,5 @@
 import React from "react";
-import { useFilterContext } from "../manager/context/filter_context";
+import { useFilterContext } from "../../manager";
 import { BsFillGridFill, BsList } from "react-icons/bs";
 import styled from "styled-components";
 

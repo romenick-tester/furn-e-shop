@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useFilterContext } from "../manager/context/filter_context";
-import { getUniqueValues, formatPrice } from "../manager/utils/helpers";
+import { useFilterContext, getUniqueValues, formatPrice } from "../../manager";
 import { FaCheck } from "react-icons/fa";
 
 const Filters = () => {
