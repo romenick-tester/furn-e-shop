@@ -4,7 +4,33 @@ import { BsFillGridFill, BsList } from "react-icons/bs";
 import styled from "styled-components";
 
 const Sort = () => {
-  return <h4>sort </h4>
+  const { filtered_products: products, grid_view } = useFilterContext();
+
+  const toggler = grid_view;
+
+  return (
+    <Wrapper>
+      <div className="btn-container">
+        <button type="button" className={toggler && "active"}>
+          <BsFillGridFill />
+        </button>
+        <button type="button" className={!toggler && "active"}>
+          <BsList />
+        </button>
+      </div>
+      <p>{products.length} product found</p>
+      <hr />
+      <form>
+        <label htmlFor="sort">sort by</label>
+        <select name="sort" id="sort" className="sort-input">
+          <option value="price-lowest">price (lowest)</option>
+          <option value="price-highest">price (highest)</option>
+          <option value="name-a">name (a-z)</option>
+          <option value="name-z">name (z-a)</option>
+        </select>
+      </form>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`
