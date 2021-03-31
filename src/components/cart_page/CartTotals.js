@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { useCartContext } from "../manager/context/cart_context";
-import { useUserContext } from "../manager/context/user_context";
-import { formatPrice } from "../manager/utils/helpers";
+import { useCartContext } from "../../manager/context/cart_context";
+import { useUserContext } from "../../manager/context/user_context";
+import { formatPrice } from "../../manager/utils/helpers";
 import { Link } from "react-router-dom";
 
 const CartTotals = () => {

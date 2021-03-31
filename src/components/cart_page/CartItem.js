@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { formatPrice } from "../manager/utils/helpers";
-import AmountButtons from "./AmountButtons";
+import { formatPrice } from "../../manager/utils/helpers";
+import AmountButtons from "../single_product_page/AmountButtons";
 import { FaTrash } from "react-icons/fa";
-import { useCartContext } from "../manager/context/cart_context";
+import { useCartContext } from "../../manager/context/cart_context";
 const CartItem = () => {
   return <h4>cart item</h4>
 }

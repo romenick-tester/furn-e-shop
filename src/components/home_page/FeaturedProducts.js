@@ -1,22 +1,22 @@
 import React from "react";
-import { useProductsContext } from "../manager/context/products_context";
+import { useProductsContext } from "../../manager/context/products_context";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Error from "./Error";
-import Loading from "./Loading";
-import Product from "./Product";
+import Error from "../regular/Error";
+import Loading from "../regular/Loading";
+import Product from "../partials/Product";
 
 const FeaturedProducts = () => {
   const {
-    products_loading: loading, 
-    products_error: error, 
+    products_loading: loading,
+    products_error: error,
     products_featured } = useProductsContext();
 
-  if(loading){
-    return <Loading/>
+  if (loading) {
+    return <Loading />
   }
 
-  if(error){
+  if (error) {
     return <Error>Products Not Found!</Error>
   }
 
@@ -27,7 +27,7 @@ const FeaturedProducts = () => {
         <div className="underline"></div>
       </div>
       <div className="section section-center featured">
-        {products_featured.slice(0,3).map((item) => {
+        {products_featured.slice(0, 3).map((item) => {
           return <Product key={item.id} {...item} />
         })}
       </div>

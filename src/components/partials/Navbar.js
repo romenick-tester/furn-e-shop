@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../manager/assets/logo.svg";
+import logo from "../../manager/assets/logo.svg";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { links } from "../manager/utils/variables";
+import { links } from "../../manager/utils/variables";
 import CartButtons from "./CartButtons";
-import { useProductsContext } from "../manager";
-import { useUserContext } from "../manager";
+import { useProductsContext, useUserContext } from "../../manager";
 
 const Nav = () => {
   const { openSidebar } = useProductsContext();
@@ -18,14 +17,14 @@ const Nav = () => {
           <Link to="/">
             <img src={logo} alt="furn-e-shop logo" />
           </Link>
-          <button type="button" className="nav-toggle" onClick={ openSidebar }>
-            <FaBars/>
+          <button type="button" className="nav-toggle" onClick={openSidebar}>
+            <FaBars />
           </button>
         </div>
         <ul className="nav-links">
-          {links.map(({id, url, text}) => <li key={id}><Link to={url}> {text} </Link></li>)}
+          {links.map(({ id, url, text }) => <li key={id}><Link to={url}> {text} </Link></li>)}
         </ul>
-        <CartButtons/>
+        <CartButtons />
       </div>
     </NavContainer>
   );

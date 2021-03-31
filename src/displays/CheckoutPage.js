@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { PageHero, StripeCheckout } from "../components";
 // extra imports
-import { useCartContext } from "../manager/context/cart_context";
-import { Link } from "react-router-dom";
+import { useCartContext } from "../manager";
 
 const CheckoutPage = () => {
   return (

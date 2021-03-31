@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { services } from "../manager";
+import { services } from "../../manager";
 
 const Services = () => {
   return (
     <Wrapper>
       <div className="section-center">
         <article className="header">
-          <h3>custom furniture <br/> built only for you</h3>
+          <h3>custom furniture <br /> built only for you</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel fugit minus id accusantium eos nostrum commodi amet tenetur. Tempora minima amet et consequatur quo dicta delectus fugit temporibus debitis officia!</p>
         </article>
         <div className="services-center">

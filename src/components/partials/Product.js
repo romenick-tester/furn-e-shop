@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { formatPrice } from "../manager/utils/helpers";
+import { formatPrice } from "../../manager/utils/helpers";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -10,7 +10,7 @@ const Product = ({ id, name, price, image }) => {
       <div className="container">
         <img src={image} alt={name} />
         <Link to={`/product/${id}`} className="link">
-          <FaSearch/>
+          <FaSearch />
         </Link>
       </div>
       <footer>

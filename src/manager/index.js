@@ -2,6 +2,7 @@ import {
     useProductsContext,
     useFilterContext,
     useUserContext,
+    useCartContext,
     ProductsProvider,
     CartProvider,
     FilterProvider
@@ -13,6 +14,7 @@ export {
     useProductsContext,
     useFilterContext,
     useUserContext,
+    useCartContext,
     ProductsProvider,
     CartProvider,
     FilterProvider,
