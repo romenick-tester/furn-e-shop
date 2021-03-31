@@ -1,8 +1,13 @@
-import CartContent from "./cart_page/CartContent";
-import FeaturedProducts from "./home_page/FeaturedProducts";
-import Hero from "./home_page/Hero";
-import Services from "./home_page/Services";
-import Contact from "./home_page/Contact";
+import CartContent from "./pages/cart_page/CartContent";
+import FeaturedProducts from "./pages/home_page/FeaturedProducts";
+import Hero from "./pages/home_page/Hero";
+import Services from "./pages/home_page/Services";
+import Contact from "./pages/home_page/Contact";
+import ProductImages from "./pages/single_product_page/ProductImages";
+import AddToCart from "./pages/single_product_page/AddToCart";
+import Filters from "./pages/products_page/Filters";
+import ProductList from "./pages/products_page/ProductList";
+import Sort from "./pages/products_page/Sort";
 import Navbar from "./partials/Navbar";
 import CartButtons from "./partials/CartButtons";
 import Footer from "./partials/Footer";
@@ -12,11 +17,6 @@ import StripeCheckout from "./partials/StripeCheckout";
 import Loading from "./regular/Loading";
 import Error from "./regular/Error";
 import Stars from "./regular/Stars";
-import ProductImages from "./single_product_page/ProductImages";
-import AddToCart from "./single_product_page/AddToCart";
-import Filters from "./products_page/Filters";
-import ProductList from "./products_page/ProductList";
-import Sort from "./products_page/Sort";
 
 export {
   FeaturedProducts,

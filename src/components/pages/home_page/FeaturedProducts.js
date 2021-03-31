@@ -1,10 +1,10 @@
 import React from "react";
-import { useProductsContext } from "../../manager/context/products_context";
+import { useProductsContext } from "../../../manager/context/products_context";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Error from "../regular/Error";
-import Loading from "../regular/Loading";
-import Product from "../partials/Product";
+import Error from "../../regular/Error";
+import Loading from "../../regular/Loading";
+import Product from "../../partials/Product";
 
 const FeaturedProducts = () => {
   const {

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useCartContext } from "../../manager";
+import { useCartContext } from "../../../manager";
 import { Link } from "react-router-dom";
 import CartColumns from "./CartColumns";
 import CartItem from "./CartItem";

@@ -1,20 +1,20 @@
 import React from "react";
-import { useFilterContext } from "../../manager";
+import { useFilterContext } from "../../../manager";
 import { BsFillGridFill, BsList } from "react-icons/bs";
 import styled from "styled-components";
 
 const Sort = () => {
-  const { filtered_products: products, grid_view } = useFilterContext();
+  const { filtered_products: products, grid_view, setGridView, setListView } = useFilterContext();
 
   const toggler = grid_view;
 
   return (
     <Wrapper>
       <div className="btn-container">
-        <button type="button" className={toggler && "active"}>
+        <button type="button" className={toggler ? "active" : null} onClick={setGridView}>
           <BsFillGridFill />
         </button>
-        <button type="button" className={!toggler && "active"}>
+        <button type="button" className={!toggler ? "active" : null} onClick={setListView}>
           <BsList />
         </button>
       </div>

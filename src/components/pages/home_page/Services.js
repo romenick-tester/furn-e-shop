@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { services } from "../../manager";
+import { services } from "../../../manager";
 
 const Services = () => {
   return (

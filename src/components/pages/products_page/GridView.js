@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Product from "../partials/Product";
+import Product from "../../partials/Product";
 
 const GridView = ({ products }) => {
 
@@ -8,7 +8,7 @@ const GridView = ({ products }) => {
     <Wrapper>
       <div className="products-container">
         {products.map((product) => {
-          return <Product key={product.ud} {...product} />
+          return <Product key={product.id} {...product} />
         })}
       </div>
     </Wrapper>
