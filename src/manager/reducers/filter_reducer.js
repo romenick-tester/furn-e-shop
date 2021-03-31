@@ -23,6 +23,9 @@ const filter_reducer = (state, action) => {
     case SET_LISTVIEW:
       return { ...state, grid_view: false };
 
+    case UPDATE_SORT:
+      return { ...state, sort: payload };
+
     default:
       return state;
   }

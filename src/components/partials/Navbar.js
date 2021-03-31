@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../../manager/assets/logo.svg";
+import logo from "../../manager/assets/furneshop.png";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { links } from "../../manager/utils/variables";
@@ -46,7 +46,7 @@ const NavContainer = styled.nav`
     align-items: center;
     justify-content: space-between;
     img {
-      width: 175px;
+      width: 300px;
       margin-left: -15px;
     }
   }
