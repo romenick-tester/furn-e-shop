@@ -7,6 +7,8 @@ import { links } from "../../manager/utils/variables";
 import CartButtons from "./CartButtons";
 import { useProductsContext, useUserContext } from "../../manager";
 
+import bg from "../../manager/assets/wood-pattern.png";
+
 const Nav = () => {
   const { openSidebar } = useProductsContext();
 
@@ -35,6 +37,9 @@ const NavContainer = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url(${bg});
+  background-color: #AB7A5F;
+  border-bottom: 1px solid white;
 
   .nav-center {
     width: 90vw;
@@ -47,6 +52,7 @@ const NavContainer = styled.nav`
     justify-content: space-between;
     img {
       width: 300px;
+      margin-top: 10px;
       margin-left: -15px;
     }
   }

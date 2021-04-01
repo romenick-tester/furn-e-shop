@@ -1,5 +1,5 @@
 import React from "react"
-import logo from "../../manager/assets/logo.svg"
+import logo from "../../manager/assets/furneshop.png"
 import { Link } from "react-router-dom"
 import { useProductsContext } from "../../manager"
 import { FaTimes } from "react-icons/fa"
@@ -7,6 +7,8 @@ import { links } from "../../manager/utils/variables"
 import styled from "styled-components"
 import CartButtons from "./CartButtons"
 import { useUserContext } from "../../manager"
+
+import bg from "../../manager/assets/wood-pattern.png";
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useProductsContext();
@@ -55,7 +57,7 @@ const SidebarContainer = styled.div`
   }
   .logo {
     justify-self: center;
-    height: 45px;
+    height: 50px;
   }
   .links {
     margin-bottom: 2rem;
@@ -84,7 +86,8 @@ const SidebarContainer = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--clr-white);
+    background-image: url(${bg});
+    background-color: #AB7A5F;
     transition: var(--transition);
     transform: translate(-100%);
     z-index: -1;
