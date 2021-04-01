@@ -36,8 +36,6 @@ const filter_reducer = (state, action) => {
 
       maxPrice = Math.max(...maxPrice);
 
-      console.log(maxPrice);
-
       return {
         ...state, all_products: [...payload],
         filtered_products: [...payload],
@@ -75,6 +73,15 @@ const filter_reducer = (state, action) => {
       };
 
       return { ...state, filtered_products: tempProducts };
+
+    case UPDATE_FILTERS:
+      const { name, value } = payload;
+
+      return { ...state, filters: { ...state.filters, [name]: value } };
+
+    case FILTER_PRODUCTS:
+      console.log("filtering products");
+      return { ...state }
 
     default:
       return state;
