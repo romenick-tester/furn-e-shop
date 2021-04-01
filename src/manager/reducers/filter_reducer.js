@@ -13,7 +13,17 @@ import {
 //   filtered_products: [],
 //   all_products: [],
 //   grid_view: true,
-//   sort: "price-lowest"
+//   sort: "price-lowest",
+//   filters: {
+//   text: "",
+//   company: "all",
+//   category: "all",
+//   color: "",
+//   min_price: 0,
+//   max_price: 0,
+//   price: 0,
+//   shipping: false,
+// }
 // }
 
 const filter_reducer = (state, action) => {
@@ -22,7 +32,17 @@ const filter_reducer = (state, action) => {
   switch (type) {
 
     case LOAD_PRODUCTS:
-      return { ...state, all_products: [...payload], filtered_products: [...payload] };
+      let maxPrice = payload.map((p) => p.price);
+
+      maxPrice = Math.max(...maxPrice);
+
+      console.log(maxPrice);
+
+      return {
+        ...state, all_products: [...payload],
+        filtered_products: [...payload],
+        filters: { ...state.filters, max_price: maxPrice, price: maxPrice }
+      };
 
     case SET_GRIDVIEW:
       return { ...state, grid_view: true };

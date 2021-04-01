@@ -12,13 +12,23 @@ import {
 } from "../constants";
 import { useProductsContext } from "./products_context";
 
-const FilterContext = React.createContext()
+const FilterContext = React.createContext();
 
 const initialState = {
   filtered_products: [],
   all_products: [],
   grid_view: true,
-  sort: "price-lowest"
+  sort: "price-lowest",
+  filters: {
+    text: "",
+    company: "all",
+    category: "all",
+    color: "",
+    min_price: 0,
+    max_price: 0,
+    price: 0,
+    shipping: false,
+  }
 }
 
 export const FilterProvider = ({ children }) => {
