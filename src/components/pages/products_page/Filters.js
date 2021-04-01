@@ -4,7 +4,7 @@ import { useFilterContext, getUniqueValues, formatPrice } from "../../../manager
 import { FaCheck } from "react-icons/fa";
 
 const Filters = () => {
-  const { filters: { text, category }, updateFilters, clearFilters, all_products } = useFilterContext();
+  const { filters: { text, category, company, color }, updateFilters, clearFilters, all_products } = useFilterContext();
 
   const categories = getUniqueValues(all_products, "category");
   const companies = getUniqueValues(all_products, "company");
@@ -39,6 +39,49 @@ const Filters = () => {
                     className={`${category === c.toLowerCase() ? "active" : null}`}
                   >
                     {c}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+          {/* companies */}
+          <div className="form-control">
+            <h5>company</h5>
+            <select name="company" value={company} onChange={updateFilters} className="company">
+              {companies.map((c, i) => {
+                return <option key={i} value={c}>{c}</option>
+              })}
+            </select>
+          </div>
+          {/* colors */}
+          <div className="form-control">
+            <h5>colors</h5>
+            <div className="colors">
+              {colors.map((c, i) => {
+                if (c === "all") {
+                  return (
+                    <button
+                      key={i}
+                      name="color"
+                      onClick={updateFilters}
+                      data-color="all"
+                      className={`all-btn ${color === "all" && "active"}`}
+                    >
+                      all
+                    </button>
+                  )
+                }
+
+                return (
+                  <button
+                    key={i}
+                    name="color"
+                    style={{ background: c }}
+                    className={`color-btn ${color === c && "active"}`}
+                    data-color={c}
+                    onClick={updateFilters}
+                  >
+                    {color === c ? <FaCheck /> : null}
                   </button>
                 )
               })}
