@@ -65,13 +65,17 @@ export const FilterProvider = ({ children }) => {
       value = e.target.textContent;
     } else if (name === "color") {
       value = e.target.dataset.color;
+    } else if (name === "price") {
+      value = Number(value)
+    } else if (name === "shipping") {
+      value = e.target.checked
     }
 
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
   };
 
   const clearFilters = (e) => {
-    console.log(e.target);
+    dispatch({ type: CLEAR_FILTERS });
   };
 
   return (
