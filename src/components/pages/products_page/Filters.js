@@ -4,7 +4,11 @@ import { useFilterContext, getUniqueValues, formatPrice } from "../../../manager
 import { FaCheck } from "react-icons/fa";
 
 const Filters = () => {
-  const { filters: { text }, updateFilters, clearFilters, all_products } = useFilterContext();
+  const { filters: { text, category }, updateFilters, clearFilters, all_products } = useFilterContext();
+
+  const categories = getUniqueValues(all_products, "category");
+  const companies = getUniqueValues(all_products, "company");
+  const colors = getUniqueValues(all_products, "colors");
 
   return (
     <Wrapper>
@@ -20,9 +24,26 @@ const Filters = () => {
               value={text}
               onChange={updateFilters}
             />
-
           </div>
-          {/* search input */}
+          {/* categories */}
+          <div className="form-control">
+            <h5>category</h5>
+            <div>
+              {categories.map((c, i) => {
+                return (
+                  <button
+                    type="button"
+                    key={i}
+                    onClick={updateFilters}
+                    name="category"
+                    className={`${category === c.toLowerCase() ? "active" : null}`}
+                  >
+                    {c}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
           {/* search input */}
         </form>
       </div>

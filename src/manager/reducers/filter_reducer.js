@@ -80,7 +80,6 @@ const filter_reducer = (state, action) => {
       return { ...state, filters: { ...state.filters, [name]: value } };
 
     case FILTER_PRODUCTS:
-      console.log("filtering products");
       return { ...state }
 
     default:

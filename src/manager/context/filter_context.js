@@ -59,7 +59,12 @@ export const FilterProvider = ({ children }) => {
   };
 
   const updateFilters = (e) => {
-    const { name, value } = e.target;
+    let { name, value } = e.target;
+
+    if (name === "category") {
+      value = e.target.textContent;
+    }
+
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
   };
 
