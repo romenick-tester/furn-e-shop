@@ -9,23 +9,6 @@ import {
   CLEAR_FILTERS,
 } from "../constants";
 
-// const initialState = {
-//   filtered_products: [],
-//   all_products: [],
-//   grid_view: true,
-//   sort: "price-lowest",
-//   filters: {
-//   text: "",
-//   company: "all",
-//   category: "all",
-//   color: "",
-//   min_price: 0,
-//   max_price: 0,
-//   price: 0,
-//   shipping: false,
-// }
-// }
-
 const filter_reducer = (state, action) => {
   const { type, payload } = action;
 
@@ -80,7 +63,39 @@ const filter_reducer = (state, action) => {
       return { ...state, filters: { ...state.filters, [name]: value } };
 
     case FILTER_PRODUCTS:
-      return { ...state }
+      const { all_products } = state;
+
+      const { text, category, company, color, price, shipping } = state.filters;
+
+      let newProducts = [...all_products];
+
+      if (text) {
+        newProducts = newProducts.filter((product) => product.name.toLowerCase().startsWith(text));
+      }
+
+      if (category !== "all") {
+        newProducts = newProducts.filter((product) => product.category === category);
+      }
+
+      if (company !== "all") {
+        newProducts = newProducts.filter((product) => product.company === company);
+      }
+
+      if (color !== "all") {
+        newProducts = newProducts.filter((product) => {
+          return product.colors.find((c) => c === color);
+        });
+      }
+
+      if (price) {
+        newProducts = newProducts.filter((product) => product.price <= price);
+      }
+
+      if (shipping) {
+        tempProducts = tempProducts.filter((product) => product.shipping === true);
+      }
+
+      return { ...state, filtered_products: newProducts };
 
     case CLEAR_FILTERS:
       return {
