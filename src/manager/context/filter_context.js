@@ -23,7 +23,7 @@ const initialState = {
     text: "",
     company: "all",
     category: "all",
-    color: "",
+    color: "all",
     min_price: 0,
     max_price: 0,
     price: 0,
@@ -74,7 +74,7 @@ export const FilterProvider = ({ children }) => {
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
   };
 
-  const clearFilters = (e) => {
+  const clearFilters = () => {
     dispatch({ type: CLEAR_FILTERS });
   };
 

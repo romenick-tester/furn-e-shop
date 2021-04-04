@@ -29,20 +29,20 @@ const ProductsContext = React.createContext()
 export const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const getProducts = async(para1) => {
+  const getProducts = async (para1) => {
     try {
       dispatch({ type: GET_PRODUCTS_REQUEST });
 
       const { data } = await axios.get(para1);
       dispatch({ type: GET_PRODUCTS_SUCCESS, payload: data });
-      
+
     } catch (error) {
       dispatch({ type: GET_PRODUCTS_ERROR });
 
     }
   }
 
-  const getSingleProduct = async(para2) => {
+  const getSingleProduct = async (para2) => {
     dispatch({ type: GET_SINGLE_PRODUCT_REQUEST });
     try {
       const { data } = await axios.get(para2);
@@ -55,7 +55,7 @@ export const ProductsProvider = ({ children }) => {
 
   useEffect(() => {
     getProducts(url1);
-  }, [url1])
+  }, [])
 
   const openSidebar = () => {
     dispatch({ type: SIDEBAR_OPEN });
@@ -66,7 +66,7 @@ export const ProductsProvider = ({ children }) => {
   };
 
   return (
-    <ProductsContext.Provider value={{openSidebar, closeSidebar, getSingleProduct, ...state}}>
+    <ProductsContext.Provider value={{ openSidebar, closeSidebar, getSingleProduct, ...state }}>
       {children}
     </ProductsContext.Provider>
   )
