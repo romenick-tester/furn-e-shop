@@ -4,18 +4,14 @@
 
 > ecommerse
 
-*Description:*
----
 
 
----
-
-| React Dependencies | Languages |
-| --------- | ---------- |
-| redux-devtools-extension |  |
-| redux |  |
-| react-redux | reactjs |
-| redux-thunk | nodejs |
-| react-router-dom | javascript |
-| react-icons | html |
-| styled-components | css |
+|       React Dependencies         |          Languages/Engines/etc...           |
+| -------------------------------- | ------------------------------------------- |
+| redux-devtools-extension         |                 javascript                  |
+| redux                            |                   nodejs                    |
+| react-redux                      |                   vscode                    |
+| redux-thunk                      |           vscode-styled-components          |
+| react-router-dom
+| react-icons
+| styled-components
