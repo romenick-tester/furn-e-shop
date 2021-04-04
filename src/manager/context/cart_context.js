@@ -8,14 +8,16 @@ import {
   COUNT_CART_TOTALS,
 } from "../constants";
 
+const cartFromLocalStorage = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : [];
+
 const initialState = {
-  cart: [],
+  cart: cartFromLocalStorage,
   total_items: 0,
   total_amount: 0,
   shipping_fee: 534,
 }
 
-const CartContext = React.createContext()
+const CartContext = React.createContext();
 
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -35,6 +37,10 @@ export const CartProvider = ({ children }) => {
   const clearCart = () => {
     console.log("clear cart");
   };
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(state.cart));
+  }, [state.cart])
 
   const funcs = { addToCart, removeItem, toggleAmount, clearCart };
 
