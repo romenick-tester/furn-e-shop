@@ -8,8 +8,12 @@ import { useCartContext, formatPrice } from "../../../manager";
 const CartItem = ({ id, image, price, name, color, amount }) => {
   const { removeItem, toggleAmount } = useCartContext();
 
-  const increase = () => { };
-  const decrease = () => { };
+  const increase = () => {
+    toggleAmount(id, "inc")
+  };
+  const decrease = () => {
+    toggleAmount(id, "dec")
+  };
 
   return (
     <Wrapper>

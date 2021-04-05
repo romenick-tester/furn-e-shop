@@ -31,7 +31,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const toggleAmount = (id, value) => {
-    console.log("toggle amount");
+    dispatch({ type: TOGGLE_CART_ITEM_AMOUNT, payload: { id, value } })
   };
 
   const clearCart = () => {

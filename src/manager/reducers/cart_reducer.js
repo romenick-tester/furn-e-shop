@@ -55,6 +55,41 @@ const cart_reducer = (state, action) => {
     case CLEAR_CART:
       return { ...state, cart: [] };
 
+    case TOGGLE_CART_ITEM_AMOUNT:
+      const { id: tempId, value } = payload;
+
+      const newCart = state.cart.map((item) => {
+
+        if (item.id === tempId) {
+          let newAmount;
+
+          if (value === "inc") {
+            newAmount = item.amount + 1;
+
+            if (newAmount > item.max) {
+              newAmount = item.max
+            }
+
+            return { ...item, amount: newAmount }
+
+          } else if (value === "dec") {
+            newAmount = item.amount - 1;
+
+            if (newAmount < 1) {
+              newAmount = 1;
+            }
+
+            return { ...item, amount: newAmount }
+          }
+
+        } else {
+          return item;
+        }
+
+      });
+
+      return { ...state, cart: newCart };
+
     default:
       return state;
   }
