@@ -26,7 +26,8 @@ const SingleProductPage = ({ match, history }) => {
   } = useProductsContext();
 
   useEffect(() => {
-    getSingleProduct(`${url}${product_id}`)
+    getSingleProduct(`${url}${product_id}`);
+    // eslint-disable-next-line
   }, [product_id]);
 
   useEffect(() => {

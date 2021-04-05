@@ -12,7 +12,7 @@ export const UserProvider = ({ children }) => {
     console.log(`user: ${user}`);
     console.log(`isAuthenticated: ${isAuthenticated}`);
     console.log(`isLoading: ${isLoading}`);
-  }, [isAuthenticated])
+  }, [isAuthenticated, user, isLoading])
 
   const vars = { loginWithRedirect, logout, myUser };
 

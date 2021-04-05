@@ -92,7 +92,7 @@ const filter_reducer = (state, action) => {
       }
 
       if (shipping) {
-        tempProducts = tempProducts.filter((product) => product.shipping === true);
+        newProducts = newProducts.filter((product) => product.shipping === true);
       }
 
       return { ...state, filtered_products: newProducts };
@@ -105,7 +105,7 @@ const filter_reducer = (state, action) => {
           text: "",
           company: "all",
           category: "all",
-          color: "",
+          color: "all",
           price: state.filters.max_price,
           shipping: false,
         }
