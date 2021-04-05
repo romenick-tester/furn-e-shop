@@ -90,6 +90,19 @@ const cart_reducer = (state, action) => {
 
       return { ...state, cart: newCart };
 
+    case COUNT_CART_TOTALS:
+      const { total_items, total_amount } = state.cart.reduce((total, item) => {
+        const { amount, price } = item;
+
+        total.total_items += amount;
+
+        total.total_amount += price * amount;
+
+        return total;
+      }, { total_items: 0, total_amount: 0 })
+
+      return { ...state, total_items, total_amount };
+
     default:
       return state;
   }
