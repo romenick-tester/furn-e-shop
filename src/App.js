@@ -9,23 +9,24 @@ import {
   SingleProductPage,
   CheckoutPage,
   ErrorPage,
+  PrivateRoute,
 } from "./displays";
 
 function App() {
   return (
     <Router>
-      <Navbar/>
-      <Sidebar/>
+      <Navbar />
+      <Sidebar />
       <Switch>
         <Route path="/" exact component={HomePage} />
         <Route path="/about" exact component={AboutPage} />
         <Route path="/cart" exact component={CartPage} />
         <Route path="/products" exact component={ProductsPage} />
         <Route path="/product/:id?" exact component={SingleProductPage} />
-        <Route path="/checkout" exact component={CheckoutPage} />
+        <PrivateRoute path="/checkout" exact component={CheckoutPage} />
         <Route path="*" component={ErrorPage} />
       </Switch>
-      <Footer/>
+      <Footer />
     </Router>
   );
 }
