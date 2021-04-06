@@ -9,6 +9,9 @@ import {
     ProductsProvider,
     Auth0Provider
 } from "./manager/context";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 ReactDOM.render(
     <Auth0Provider

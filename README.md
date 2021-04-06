@@ -12,6 +12,21 @@
 | redux                            |                   nodejs                    |
 | react-redux                      |                   vscode                    |
 | redux-thunk                      |           vscode-styled-components          |
-| react-router-dom
-| react-icons
-| styled-components
+| react-router-dom                 |                                             |
+| react-icons                      |                                             |
+| styled-components                |                                             |
+| dotenv                           |
+| stripe                           |
+| auth0                            |
+| netlify cli (global devD...)
+
+### note: 
+    * to install netlify-cli: 
+        npm i -g netlify-cli
+    * to run netlify-cli:
+        ntl dev or netlify dev or npm run netlify
+
+requirements:
+    * netlify account
+    * stripe account
+    * auth0 account
