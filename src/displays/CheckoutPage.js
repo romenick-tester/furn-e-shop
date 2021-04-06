@@ -6,11 +6,20 @@ import { PageHero, StripeCheckout } from "../components";
 import { useCartContext } from "../manager";
 
 const CheckoutPage = () => {
+  const { cart } = useCartContext();
+
   return (
     <main>
-      <PageHero title="checkout"/>
+      <PageHero title="checkout" />
       <Wrapper className="page section-center">
-        <h1>checkout here</h1>
+        {cart.length < 1 ? (
+          <div className="empty">
+            <h2>your cart is empty</h2>
+            <Link to="/products" className="btn">let's fill it up!</Link>
+          </div>
+        ) : (
+          <StripeCheckout />
+        )}
       </Wrapper>
     </main>
   )
