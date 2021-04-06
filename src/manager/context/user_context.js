@@ -14,6 +14,7 @@ export const UserProvider = ({ children }) => {
     } else {
       setMyUser(false);
     }
+    // eslint-disable-next-line
   }, [isAuthenticated])
 
   const vars = { loginWithRedirect, logout, myUser };

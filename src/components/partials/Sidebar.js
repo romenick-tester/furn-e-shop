@@ -1,17 +1,15 @@
 import React from "react"
-import logo from "../../manager/assets/furneshop.png"
 import { Link } from "react-router-dom"
-import { useProductsContext } from "../../manager"
-import { FaTimes } from "react-icons/fa"
-import { links } from "../../manager/utils/variables"
 import styled from "styled-components"
+import { FaTimes } from "react-icons/fa"
 import CartButtons from "./CartButtons"
-import { useUserContext } from "../../manager"
+import { useProductsContext, useUserContext, links, logo } from "../../manager"
 
 import bg from "../../manager/assets/wood-pattern.png";
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useProductsContext();
+  const { myUser } = useUserContext();
 
   return (
     <SidebarContainer>
@@ -26,7 +24,7 @@ const Sidebar = () => {
           {links.map(({ id, url, text }) => {
             return <li key={id}><Link to={url} onClick={closeSidebar}> {text} </Link></li>
           })}
-          <li><Link to="/checkout" onClick={closeSidebar}> checkout </Link></li>
+          {myUser && <li><Link to="/checkout" onClick={closeSidebar}> checkout </Link></li>}
         </ul>
         <CartButtons />
       </aside>
