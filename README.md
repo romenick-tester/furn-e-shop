@@ -11,8 +11,8 @@
 | redux-devtools-extension         |                 javascript                  |
 | redux                            |                   nodejs                    |
 | react-redux                      |                   vscode                    |
-| redux-thunk                      |           vscode-styled-components          |
-| react-router-dom                 |                                             |
+| redux-thunk                      |     vsCode: vscode-styled-components        |
+| react-router-dom                 |                vsCode: dotenv               |
 | react-icons                      |                                             |
 | styled-components                |                                             |
 | dotenv                           |
