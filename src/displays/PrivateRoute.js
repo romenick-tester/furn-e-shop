@@ -1,13 +1,11 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-// will remove later
-import { useUserContext } from "../manager";
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
-  const { myUser } = useUserContext();
+  const { user } = useAuth0();
 
-  return <Route {...rest} render={(props) => myUser ? <Component {...props} /> : <Redirect to="/" />} />;
+  return <Route {...rest} render={(props) => user ? <Component {...props} /> : <Redirect to="/" />} />;
 };
 
 export default PrivateRoute;

@@ -10,24 +10,27 @@ import {
   CheckoutPage,
   ErrorPage,
   PrivateRoute,
+  AuthWrapper
 } from "./displays";
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Sidebar />
-      <Switch>
-        <Route path="/" exact component={HomePage} />
-        <Route path="/about" exact component={AboutPage} />
-        <Route path="/cart" exact component={CartPage} />
-        <Route path="/products" exact component={ProductsPage} />
-        <Route path="/product/:id?" exact component={SingleProductPage} />
-        <PrivateRoute path="/checkout" exact component={CheckoutPage} />
-        <Route path="*" component={ErrorPage} />
-      </Switch>
-      <Footer />
-    </Router>
+    <AuthWrapper>
+      <Router>
+        <Navbar />
+        <Sidebar />
+        <Switch>
+          <Route path="/" exact component={HomePage} />
+          <Route path="/about" exact component={AboutPage} />
+          <Route path="/cart" exact component={CartPage} />
+          <Route path="/products" exact component={ProductsPage} />
+          <Route path="/product/:id?" exact component={SingleProductPage} />
+          <PrivateRoute path="/checkout" exact component={CheckoutPage} />
+          <Route path="*" component={ErrorPage} />
+        </Switch>
+        <Footer />
+      </Router>
+    </AuthWrapper>
   );
 }
 

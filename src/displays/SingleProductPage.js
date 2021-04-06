@@ -46,9 +46,7 @@ const SingleProductPage = ({ match, history }) => {
     return <Error>There was an error.</Error>
   }
 
-  const {
-    category, colors, company, description, featured, id,
-    images, name, price, reviews, shipping, stars, stock, sku } = product;
+  const { company, description, images, name, price, reviews, stars, stock, sku } = product;
 
   return (
     <Wrapper>
