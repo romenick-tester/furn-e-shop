@@ -1,18 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const UserContext = React.createContext();
 
 export const UserProvider = ({ children }) => {
-  const [myUser, setMyUser] = useState(null);
-
   const { loginWithRedirect, logout, user } = useAuth0();
 
-  useEffect(() => {
-    setMyUser(user);
-  }, [user]);
-
-  const vars = { loginWithRedirect, logout, myUser };
+  const vars = { loginWithRedirect, logout, user };
 
   return (
     <UserContext.Provider value={{ ...vars }}>{children}</UserContext.Provider>

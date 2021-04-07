@@ -9,7 +9,7 @@ import bg from "../../manager/assets/wood-pattern.png";
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useProductsContext();
-  const { myUser } = useUserContext();
+  const { user } = useUserContext();
 
   return (
     <SidebarContainer>
@@ -24,7 +24,7 @@ const Sidebar = () => {
           {links.map(({ id, url, text }) => {
             return <li key={id}><Link to={url} onClick={closeSidebar}> {text} </Link></li>
           })}
-          {myUser && <li><Link to="/checkout" onClick={closeSidebar}> checkout </Link></li>}
+          {user && <li><Link to="/checkout" onClick={closeSidebar}> checkout </Link></li>}
         </ul>
         <CartButtons />
       </aside>

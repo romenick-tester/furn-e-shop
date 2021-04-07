@@ -41,7 +41,23 @@ const CheckoutForm = () => {
   }
 
   const createPaymentIntent = async () => {
-    console.log("hello from stripe");
+    try {
+      const body = {
+        cart: [...cart],
+        shipping_fee,
+        total_amount
+      }
+
+      const config = { headers: { "Content-Type": "application/json" } };
+
+      const { data } = await axios.post("/.netlify/functions/create-payment-intent", body, config);
+
+      setClientSecret(data);
+    } catch (error) {
+      const msg = error.response && error.response.data.error ? error.response.data.error.message : error.message;
+
+      console.error(msg);
+    }
   }
 
   useEffect(() => {

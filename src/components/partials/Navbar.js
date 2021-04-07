@@ -11,7 +11,7 @@ import bg from "../../manager/assets/wood-pattern.png";
 
 const Nav = () => {
   const { openSidebar } = useProductsContext();
-  const { myUser } = useUserContext();
+  const { user } = useUserContext();
   return (
     <NavContainer>
       <div className="nav-center">
@@ -25,7 +25,7 @@ const Nav = () => {
         </div>
         <ul className="nav-links">
           {links.map(({ id, url, text }) => <li key={id}><Link to={url}> {text} </Link></li>)}
-          {myUser && <li><Link to="/checkout">checkout</Link></li>}
+          {user && <li><Link to="/checkout">checkout</Link></li>}
         </ul>
         <CartButtons />
       </div>

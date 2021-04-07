@@ -11,7 +11,7 @@ const CheckoutPage = () => {
   return (
     <main>
       <PageHero title="checkout" />
-      <Wrapper className="page section-center">
+      <Wrapper className="page">
         {cart.length < 1 ? (
           <div className="empty">
             <h2>your cart is empty</h2>
@@ -24,6 +24,14 @@ const CheckoutPage = () => {
     </main>
   )
 }
-const Wrapper = styled.div``
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .empty {
+    text-align: center;
+  }
+`
 
 export default CheckoutPage;
