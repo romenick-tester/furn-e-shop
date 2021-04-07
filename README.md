@@ -30,3 +30,5 @@ requirements:
     * netlify account
     * stripe account
     * auth0 account
+
+completed app: https://tester-furneshop.netlify.app
