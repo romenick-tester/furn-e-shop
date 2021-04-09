@@ -20,6 +20,8 @@
 | auth0                            |
 | netlify cli (global devD...)
 
+<img src="https://i.ibb.co/RbmXrGH/furneshop-cert.png" width="600">
+
 ### note: 
     * to install netlify-cli: 
         npm i -g netlify-cli
